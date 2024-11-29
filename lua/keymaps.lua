@@ -5,8 +5,10 @@
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- Diagnostic keymaps vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
+
+vim.keymap.set('i', '<C-n>', '¬')
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -32,9 +34,9 @@ vim.g.copilot_no_tab_map = true
 -- Normal mode keybindings
 vim.keymap.set('n', '<C-h>', ':tabp<CR>')
 vim.keymap.set('n', '<C-l>', ':tabn<CR>')
-vim.keymap.set('n', '<C-o>', '<C-^>')
+vim.keymap.set('n', '<M-o>', '<C-^>')
 
-vim.keymap.set('n', '<leader>e', ':Ex<CR>')
+-- vim.keymap.set('n', '<leader>e', ':Ex<CR>')
 -- Normal mode non-recursive keybindings
 vim.keymap.set('n', 'u', ':undo<CR>')
 vim.keymap.set('n', '<C-r>', ':redo<CR>')
@@ -47,7 +49,6 @@ vim.keymap.set('n', '<leader>h', ':lua vim.cmd("wincmd h")<CR>')
 vim.keymap.set('n', '<leader>j', ':lua vim.cmd("wincmd j")<CR>')
 vim.keymap.set('n', '<leader>k', ':lua vim.cmd("wincmd k")<CR>')
 vim.keymap.set('n', '<leader>l', ':lua vim.cmd("wincmd l")<CR>')
-vim.keymap.set('n', '<leader>n', ':lua vim.cmd("EmmetMatchTag")<CR>')
 vim.keymap.set('n', '<leader>w', ':w!<CR>')
 vim.keymap.set('n', '<leader>q', ':q!<CR>')
 vim.keymap.set('n', '<leader>x', ':lua vim.cmd("close")<CR>')
