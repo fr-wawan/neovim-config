@@ -35,6 +35,7 @@ vim.g.copilot_no_tab_map = true
 vim.keymap.set('n', '<C-h>', ':tabp<CR>')
 vim.keymap.set('n', '<C-l>', ':tabn<CR>')
 vim.keymap.set('n', '<M-o>', '<C-^>')
+vim.keymap.set('n', '<C-F>', ':%S//gc<LEFT><LEFT><LEFT>')
 
 -- vim.keymap.set('n', '<leader>e', ':Ex<CR>')
 -- Normal mode non-recursive keybindings
