@@ -62,15 +62,7 @@ return {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        pickers = {
-          find_files = {
-            hidden = true,
-          },
-        },
         defaults = {
-          vimgrep_arguments = {
-            '--hidden',
-          },
           file_ignore_patterns = {
             'node_modules',
             'vendor',
@@ -93,7 +85,9 @@ return {
       local builtin = require 'telescope.builtin'
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<C-p>', function()
-        require('telescope').extensions['recent-files'].recent_files {}
+        require('telescope').extensions['recent-files'].recent_files {
+          hidden = true,
+        }
       end, { noremap = true, silent = true })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = '[S]earch [F]iles' })

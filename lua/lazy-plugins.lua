@@ -22,44 +22,47 @@ require('lazy').setup({
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
-  require 'kickstart/plugins/gitsigns',
+  require 'exwadia/plugins/gitsigns',
 
-  -- require 'kickstart/plugins/which-key',
+  -- require 'exwadia/plugins/which-key',
 
-  require 'kickstart/plugins/telescope',
+  require 'exwadia/plugins/telescope',
 
-  require 'kickstart/plugins/lspconfig',
-  -- require 'kickstart/plugins/ufo',
+  require 'exwadia/plugins/lspconfig',
 
-  require 'kickstart/plugins/conform',
+  require 'exwadia/plugins/ufo',
 
-  require 'kickstart/plugins/cmp',
+  require 'exwadia/plugins/vim-surround',
 
-  require 'kickstart/plugins/colorscheme',
+  require 'exwadia/plugins/conform',
 
-  require 'kickstart/plugins/vim-abolish',
+  require 'exwadia/plugins/cmp',
 
-  require 'kickstart/plugins/todo-comments',
+  require 'exwadia/plugins/colorscheme',
 
-  require 'kickstart/plugins/treesitter',
+  require 'exwadia/plugins/vim-abolish',
 
-  require 'kickstart/plugins/autotag',
+  require 'exwadia/plugins/todo-comments',
 
-  require 'kickstart/plugins/namespace',
+  require 'exwadia/plugins/treesitter',
 
-  require 'kickstart/plugins/harpoon',
+  require 'exwadia/plugins/autotag',
 
-  require 'kickstart/plugins/copilot',
+  require 'exwadia/plugins/namespace',
 
-  require 'kickstart/plugins/copilot-chat',
+  require 'exwadia/plugins/harpoon',
 
-  require 'kickstart/plugins/vim-visual-multi',
+  require 'exwadia/plugins/copilot',
 
-  require 'kickstart/plugins/toggleterm',
+  require 'exwadia/plugins/copilot-chat',
 
-  require 'kickstart/plugins/presence',
+  require 'exwadia/plugins/vim-visual-multi',
 
-  require 'kickstart/plugins/screenkey',
+  require 'exwadia/plugins/toggleterm',
+
+  require 'exwadia/plugins/presence',
+
+  require 'exwadia/plugins/screenkey',
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -70,11 +73,11 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  require 'kickstart.plugins.lint',
-  require 'kickstart.plugins.autopairs',
-  require 'kickstart.plugins.neo-tree',
+  -- require 'exwadia.plugins.debug',
+  -- require 'exwadia.plugins.indent_line',
+  require 'exwadia.plugins.lint',
+  require 'exwadia.plugins.autopairs',
+  require 'exwadia.plugins.neo-tree',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

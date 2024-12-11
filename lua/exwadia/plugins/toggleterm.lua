@@ -11,7 +11,7 @@ return {
       start_in_insert = true,
       insert_mappings = true, -- whether or not the open mapping applies in insert mode
       persist_size = true,
-      direction = 'horizontal',
+      direction = 'float',
     }
   end,
 }
