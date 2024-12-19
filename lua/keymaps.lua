@@ -35,7 +35,7 @@ vim.g.copilot_no_tab_map = true
 vim.keymap.set('n', '<C-h>', ':tabp<CR>')
 vim.keymap.set('n', '<C-l>', ':tabn<CR>')
 vim.keymap.set('n', '<M-o>', '<C-^>')
-vim.keymap.set('n', '<C-F>', ':%S//gc<LEFT><LEFT><LEFT>')
+vim.keymap.set('n', '<M-f>', ':%S///gc<LEFT><LEFT><LEFT>')
 
 -- vim.keymap.set('n', '<leader>e', ':Ex<CR>')
 -- Normal mode non-recursive keybindings
@@ -94,5 +94,7 @@ local function lsp_organize_imports()
   local params = { command = '_typescript.organizeImports', arguments = { vim.api.nvim_buf_get_name(0) }, title = '' }
   vim.lsp.buf.execute_command(params)
 end
+
+vim.api.nvim_create_user_command('W', 'w', {})
 
 vim.keymap.set('n', '<M-S-o>', lsp_organize_imports, { noremap = true, silent = true })

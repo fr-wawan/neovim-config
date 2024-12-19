@@ -22,7 +22,7 @@ require('lazy').setup({
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
-  require 'exwadia/plugins/gitsigns',
+  -- require 'exwadia/plugins/gitsigns',
 
   -- require 'exwadia/plugins/which-key',
 
@@ -30,9 +30,11 @@ require('lazy').setup({
 
   require 'exwadia/plugins/lspconfig',
 
-  require 'exwadia/plugins/ufo',
+  -- require 'exwadia/plugins/ufo',
 
   require 'exwadia/plugins/vim-surround',
+
+  require 'exwadia/plugins/vim-matchit',
 
   require 'exwadia/plugins/conform',
 
@@ -54,7 +56,7 @@ require('lazy').setup({
 
   require 'exwadia/plugins/copilot',
 
-  require 'exwadia/plugins/copilot-chat',
+  -- require 'exwadia/plugins/copilot-chat',
 
   require 'exwadia/plugins/vim-visual-multi',
 
@@ -62,7 +64,7 @@ require('lazy').setup({
 
   require 'exwadia/plugins/presence',
 
-  require 'exwadia/plugins/screenkey',
+  -- require 'exwadia/plugins/screenkey',
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
