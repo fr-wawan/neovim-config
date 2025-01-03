@@ -216,7 +216,6 @@ return {
             'vue', -- Vue.js single-file components (.vue)
           },
         },
-
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
