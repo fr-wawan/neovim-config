@@ -64,6 +64,8 @@ require('lazy').setup({
 
   require 'exwadia/plugins/presence',
 
+  require 'exwadia/plugins/focus',
+
   -- require 'exwadia/plugins/screenkey',
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
