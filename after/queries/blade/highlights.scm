@@ -1,9 +1,17 @@
-(directive) @function
-(directive_start) @function
-(directive_end) @function
-(comment) @comment
-((parameter) @include (#set! "priority" 110)) 
-((php_only) @include (#set! "priority" 110)) 
-((bracket_start) @function (#set! "priority" 120)) 
-((bracket_end) @function (#set! "priority" 120)) 
-(keyword) @function
+; inherits: html
+
+(escaped_echo_statement) @punctuation.special
+
+(unescaped_echo_statement) @punctuation.special
+
+(directive) @keyword.directive
+
+(alpine_attribute
+   (attribute_name) @attribute
+   (quoted_attribute_value)) @string
+
+(expression_attribute
+  (attribute_name) @attribute
+  (quoted_attribute_value)) @string
+
+(blade_comment) @comment
