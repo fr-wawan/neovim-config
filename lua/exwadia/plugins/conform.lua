@@ -31,9 +31,9 @@ return {
       --     lsp_format = lsp_format_opt,
       --   }
       -- end,
-      format_after_save = {
-        lsp_format = 'fallback',
-      },
+      -- format_after_save = {
+      --   lsp_format = 'fallback',
+      -- },
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
