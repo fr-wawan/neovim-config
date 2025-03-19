@@ -3,6 +3,8 @@ if vim.g.vscode then
   -- [[ Install `lazy.nvim` plugin manager ]]
   require 'lazy-bootstrap'
 
+  require 'vscode_options'
+
   require 'vscode_plugins'
 
 else
