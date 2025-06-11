@@ -18,8 +18,8 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
-      { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
-      'williamboman/mason-lspconfig.nvim',
+      { 'mason-org/mason.nvim',opts= {},version= '^1.0.0' }, -- NOTE: Must be loaded before dependants
+      {'mason-org/mason-lspconfig.nvim',version =  '^1.0.0'},
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
@@ -177,7 +177,10 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 
       local mason_registry = require 'mason-registry'
-      local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
+      --local vue_language_server_path = vim.fn.expand("$MASON/bin/vue-language-server") .. '/node_modules/@vue/language-server'
+      local vue_language_server_path = vim.fn.stdpath('data')
+      .. '/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin'
+
       local servers = {
         -- clangd = {},
         -- gopls = {},
@@ -202,7 +205,7 @@ return {
                 location = vue_language_server_path,
 
                 -- Specify the languages the plugin applies to (in this case, Vue files)
-                languages = { 'vue' },
+                languages = { 'vue',"javascript","typescript" },
               },
             },
           },
@@ -211,10 +214,9 @@ return {
           filetypes = {
             'typescript', -- TypeScript files (.ts)
             'javascript', -- JavaScript files (.js)
-            'javascriptreact', -- React files with JavaScript (.jsx)
-            'typescriptreact', -- React files with TypeScript (.tsx)
             'vue', -- Vue.js single-file components (.vue)
           },
+          single_file_support = false,
         },
         lua_ls = {
           -- cmd = {...},
