@@ -17,7 +17,7 @@ require('lazy').setup({
 
   require 'exwadia.plugins.highlight-color',
 
-  require 'exwadia.plugins.vim-abolish',
+  -- require 'exwadia.plugins.vim-abolish',
 
   require 'exwadia.plugins.autotag',
 
