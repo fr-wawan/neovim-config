@@ -30,12 +30,24 @@ return {
         },
         opts = {},
       },
+      {
+        'rafamadriz/friendly-snippets',
+        config = function()
+          require('luasnip.loaders.from_vscode').lazy_load()
+          require('luasnip.loaders.from_vscode').lazy_load { paths = { '~/.config/nvim/snippets' } }
+        end,
+      },
       'folke/lazydev.nvim',
     },
     --- @module 'blink.cmp'
     --- @type blink.cmp.Config
     opts = {
       keymap = {
+        preset = 'default',
+        ['<C-k>'] = { 'select_prev', 'fallback' },
+        ['<C-j'] = { 'select_next', 'fallback' },
+        ['<Tab>'] = { 'select_and_accept', 'fallback' },
+        ['<C-y>'] = { 'show', 'show_documentation', 'hide_documentation' },
         -- 'default' (recommended) for mappings similar to built-in completions
         --   <c-y> to accept ([y]es) the completion.
         --    This will auto-import if your LSP supports it.

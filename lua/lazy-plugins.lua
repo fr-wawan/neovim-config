@@ -27,7 +27,7 @@ require('lazy').setup({
 
   require 'exwadia.plugins.copilot',
 
-  require 'exwadia.plugins.copilot-chat',
+  -- require 'exwadia.plugins.copilot-chat',
 
   require 'exwadia.plugins.vim-visual-multi',
 
