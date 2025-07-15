@@ -36,6 +36,7 @@ require('lazy').setup({
   require 'exwadia.plugins.commentstring',
 
   require 'exwadia.plugins.toggleterm',
+  require 'exwadia.plugins.statusline',
 
   require 'exwadia.plugins.presence',
 
