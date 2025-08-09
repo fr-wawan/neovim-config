@@ -58,6 +58,7 @@ return {
             'node_modules',
             'vendor',
             '.git',
+            '.nuxt',
           },
         },
         -- You can put your default mappings / updates / etc. in here

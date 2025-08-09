@@ -45,9 +45,9 @@ return {
       keymap = {
         preset = 'default',
         ['<C-k>'] = { 'select_prev', 'fallback' },
-        ['<C-j'] = { 'select_next', 'fallback' },
+        ['<C-j>'] = { 'select_next', 'fallback' },
         ['<Tab>'] = { 'select_and_accept', 'fallback' },
-        ['<C-y>'] = { 'show', 'show_documentation', 'hide_documentation' },
+        ['<C-y>'] = { 'show', 'fallback' },
         -- 'default' (recommended) for mappings similar to built-in completions
         --   <c-y> to accept ([y]es) the completion.
         --    This will auto-import if your LSP supports it.
@@ -69,7 +69,6 @@ return {
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        preset = 'default',
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps

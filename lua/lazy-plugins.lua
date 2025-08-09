@@ -27,7 +27,7 @@ require('lazy').setup({
 
   require 'exwadia.plugins.copilot',
 
-  -- require 'exwadia.plugins.copilot-chat',
+  require 'exwadia.plugins.copilot-chat',
 
   require 'exwadia.plugins.vim-visual-multi',
 
@@ -35,7 +35,6 @@ require('lazy').setup({
 
   require 'exwadia.plugins.commentstring',
 
-  require 'exwadia.plugins.toggleterm',
   require 'exwadia.plugins.statusline',
 
   require 'exwadia.plugins.presence',
@@ -44,7 +43,7 @@ require('lazy').setup({
 
   require 'exwadia.plugins.todo-comments',
 
-  require 'exwadia.plugins.mini',
+  -- require 'exwadia.plugins.mini',
 
   require 'exwadia.plugins.treesitter',
 
