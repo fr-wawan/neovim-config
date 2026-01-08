@@ -1,5 +1,11 @@
 return {
   -- 'vyfor/cord.nvim',
   -- build = ':Cord update',
-  -- opts = {}
+  -- opts = {
+  --   text = {
+  --     workspace = function()
+  --       return 'yang ytta ytta aja'
+  --     end,
+  --   },
+  -- },
 }
