@@ -22,13 +22,15 @@ vim.keymap.set('n', '<M-o>', '<C-^>')
 
 -- copilot
 vim.api.nvim_set_keymap('i', '<M-CR>', 'copilot#Accept("<CR>")', { expr = true, noremap = true, silent = true })
+vim.keymap.set('v', '<', '<gv', { desc = 'Outdent and reselect' })
+vim.keymap.set('v', '>', '>gv', { desc = 'Indent and reselect' })
 vim.g.copilot_no_tab_map = true
 
 vim.keymap.set('n', '<leader>v', ':vsplit<CR>')
-vim.keymap.set('n', '<leader>h', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<leader>l', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<leader>j', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<leader>k', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move focus to the upper window' })
 
 vim.keymap.set('n', '<leader>x', ':lua vim.cmd("close")<CR>')
 vim.keymap.set('n', '<M-r>', ':LspRestart<CR>')

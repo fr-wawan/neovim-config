@@ -5,8 +5,9 @@ require('lazy').setup({
 
   require 'exwadia.plugins.telescope',
 
-
   require 'exwadia.plugins.lspconfig',
+
+  require 'exwadia.plugins.lspsaga',
 
   require 'exwadia.plugins.vim-surround',
 
@@ -36,7 +37,7 @@ require('lazy').setup({
 
   require 'exwadia.plugins.commentstring',
 
-  require 'exwadia.plugins.statusline',
+  -- require 'exwadia.plugins.statusline',
 
   require 'exwadia.plugins.laravel',
 
