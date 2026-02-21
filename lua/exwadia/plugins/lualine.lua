@@ -9,8 +9,8 @@ return {
   event = 'VeryLazy',
   config = function()
     -- ─── One Dark Colors ──────────────────────────────────────────────────
-    local colors = {
-      bg = '#21252b',
+     local colors = {
+       bg = '#21252b',
       bg_alt = '#282c34',
       surface = '#2c313a',
       border = '#3e4451',
@@ -23,8 +23,8 @@ return {
       green = '#98c379',
       cyan = '#56b6c2',
       blue = '#61afef',
-      purple = '#c678dd',
-    }
+       purple = '#c678dd',
+     }
 
     -- ─── Custom Theme ─────────────────────────────────────────────────────
     local one_dark = {
@@ -128,35 +128,37 @@ return {
     }
 
     -- LSP server name(s) yang aktif
-    local lsp_name = {
-      function()
-        local clients = vim.lsp.get_clients { bufnr = 0 }
-        if #clients == 0 then
-          return '󰅦 No LSP'
-        end
-        local names = {}
-        for _, c in ipairs(clients) do
-          if c.name ~= 'null-ls' and c.name ~= 'copilot' then
-            table.insert(names, c.name)
-          end
-        end
-        return #names > 0 and ('󰒍 ' .. table.concat(names, ', ')) or '󰅦 No LSP'
-      end,
-      color = { fg = colors.cyan, gui = 'italic' },
-    }
+     local lsp_name = {
+       function()
+         local clients = vim.lsp.get_clients { bufnr = 0 }
+         if #clients == 0 then
+           return 'No LSP'
+         end
+         local names = {}
+         for _, c in ipairs(clients) do
+           if c.name ~= 'null-ls' and c.name ~= 'copilot' then
+             table.insert(names, c.name)
+           end
+         end
+         return #names > 0 and ('LSP: ' .. table.concat(names, ', ')) or 'No LSP'
+       end,
+       color = { fg = colors.cyan, gui = 'italic' },
+     }
 
     -- Scroll progress — bar style
-    local scrollbar = {
-      function()
-        local bars = { '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█' }
-        local line = vim.api.nvim_win_get_cursor(0)[1]
-        local total = vim.api.nvim_buf_line_count(0)
-        local idx = math.floor((line - 1) / total * #bars) + 1
-        return bars[math.min(idx, #bars)]
-      end,
-      color = { fg = colors.blue, bg = colors.bg },
-      padding = { left = 0, right = 1 },
-    }
+     local scrollbar = {
+       function()
+         local line = vim.api.nvim_win_get_cursor(0)[1]
+         local total = vim.api.nvim_buf_line_count(0)
+         if total <= 1 then
+           return ' '
+         end
+         local pct = math.floor((line / total) * 100)
+         return tostring(pct) .. '%%'
+       end,
+       color = { fg = colors.fg_dim, bg = colors.bg },
+       padding = { left = 1, right = 1 },
+     }
 
     -- ─── Setup ────────────────────────────────────────────────────────────
     require('lualine').setup {
@@ -238,14 +240,12 @@ return {
         lualine_z = {},
       },
 
-      extensions = {
-        'neo-tree',
-        'lazy',
-        'mason',
-        'trouble',
-        'quickfix',
-        'fugitive',
-      },
-    }
-  end,
+       extensions = {
+         'lazy',
+         'mason',
+         'trouble',
+         'quickfix',
+       },
+     }
+   end,
 }

@@ -1,7 +1,6 @@
 require('lazy').setup({
-  require 'exwadia.plugins.vim-surround',
   require 'exwadia.plugins.vim-matchit',
-  require 'exwadia.plugins.presence',
+  require 'exwadia.plugins.mini',
   {
     'vscode-neovim/vscode-multi-cursor.nvim',
     event = 'VeryLazy',

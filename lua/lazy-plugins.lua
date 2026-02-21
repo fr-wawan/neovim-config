@@ -7,15 +7,15 @@ require('lazy').setup({
 
   require 'exwadia.plugins.lspconfig',
 
-  -- require 'exwadia.plugins.lspsaga',
-
-  require 'exwadia.plugins.vim-surround',
-
   require 'exwadia.plugins.vim-matchit',
 
   require 'exwadia.plugins.conform',
 
-  require 'exwadia.plugins.cmp',
+  require 'exwadia.plugins.blink-cmp',
+
+  require 'exwadia.plugins.comment',
+
+  require 'exwadia.plugins.trouble',
 
   require 'exwadia.plugins.highlight-color',
 
@@ -29,11 +29,11 @@ require('lazy').setup({
 
   require 'exwadia.plugins.copilot',
 
-  require 'exwadia.plugins.opencode',
+  require 'exwadia.plugins.undotree',
+
+  require 'exwadia.plugins.illuminate',
 
   require 'exwadia.plugins.vim-visual-multi',
-
-  -- require 'exwadia.plugins.toggleterm',
 
   require 'exwadia.plugins.commentstring',
 
@@ -43,13 +43,13 @@ require('lazy').setup({
 
   require 'exwadia.plugins.rustacenvim',
 
-  require 'exwadia.plugins.presence',
+  -- require 'exwadia.plugins.presence',
 
   require 'exwadia.plugins.colorscheme',
 
   require 'exwadia.plugins.todo-comments',
 
-  -- require 'exwadia.plugins.mini',
+  require 'exwadia.plugins.mini',
 
   require 'exwadia.plugins.treesitter',
 
@@ -57,9 +57,6 @@ require('lazy').setup({
 
   require 'exwadia.plugins.autopairs',
 
-  -- require 'exwadia.plugins.oil',
-
-  -- require 'exwadia.plugins.neo-tree',
   require 'exwadia.plugins.yazi',
 }, {
   ui = {

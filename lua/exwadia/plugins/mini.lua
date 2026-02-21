@@ -1,40 +1,71 @@
 return {
-  { -- Collection of various small independent plugins/modules
+  {
     'echasnovski/mini.nvim',
+    version = false,
+    event = 'VeryLazy',
     config = function()
-      -- Better Around/Inside textobjects
-      --
-      -- Examples:
-      --  - va)  - [V]isually select [A]round [)]paren
-      --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
-      --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup { n_lines = 500 }
-
-      -- Add/delete/replace surroundings (brackets, quotes, etc.)
-      --
-      -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-      -- - sd'   - [S]urround [D]elete [']quotes
-      -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
-      -- Simple and easy statusline.
-      --  You could remove this setup call if you don't like it,
-      --  and try some other statusline plugin
-      local statusline = require 'mini.statusline'
-      -- set use_icons to true if you have a Nerd Font
-      statusline.setup { use_icons = vim.g.have_nerd_font }
-
-      -- You can configure sections in the statusline by overriding their
-      -- default behavior. For example, here we set the section for
-      -- cursor location to LINE:COLUMN
-      ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_location = function()
-        return '%2l:%-2v'
-      end
-
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
+      local starter = require 'mini.starter'
+      starter.setup {
+        evaluate_single = true,
+        header = table.concat({
+          '     _   __                _           ',
+          '    / | / /__  ____ _   __(_)___ ___    ',
+          '   /  |/ / _ \\ / __ \\ | / / / __ `__ \\   ',
+          '  / /|  /  __/ /_/ / |/ / / / / / / /   ',
+          ' /_/ |_|\\___/\\____/|___/_/_/ /_/ /_/    ',
+        }, '\n'),
+        items = {
+          {
+            name = 'New file',
+            action = 'enew',
+            section = 'Actions',
+          },
+          {
+            name = 'Find files',
+            action = "lua require('telescope.builtin').find_files()",
+            section = 'Actions',
+          },
+          {
+            name = 'Live grep',
+            action = "lua require('telescope.builtin').live_grep()",
+            section = 'Actions',
+          },
+          {
+            name = 'Recent files',
+            action = "lua require('telescope').extensions['recent-files'].recent_files({ hidden = true })",
+            section = 'Actions',
+          },
+          {
+            name = 'File manager (Yazi)',
+            action = 'Yazi',
+            section = 'Actions',
+          },
+          {
+            name = 'Edit config',
+            action = "lua require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config') })",
+            section = 'Config',
+          },
+          {
+            name = 'Lazy',
+            action = 'Lazy',
+            section = 'Config',
+          },
+          {
+            name = 'Quit',
+            action = 'qa',
+            section = 'Actions',
+          },
+          starter.sections.recent_files(10, false, true),
+        },
+        content_hooks = {
+          starter.gen_hook.adding_bullet('• ', false),
+          starter.gen_hook.indexing('all', { 'Recent files' }),
+          starter.gen_hook.aligning('center', 'center'),
+        },
+      }
     end,
   },
 }
--- vim: ts=2 sts=2 sw=2 et
