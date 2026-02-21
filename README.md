@@ -1,6 +1,6 @@
-# Neovim config (exwadia)
+# Neovim confi
 
-Maintained, lazy.nvim-based config.
+lazy.nvim-based config.
 
 ## Keybindings (most used)
 
@@ -84,8 +84,3 @@ Leader is `<Space>`.
 
 - `<leader>u`: UndoTree toggle
 - `]r` / `[r`: Next/prev reference highlight
-
-### Home
-
-- Opens automatically on `nvim` (no args)
-- `<leader>oh`: Open home
