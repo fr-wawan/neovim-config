@@ -247,9 +247,9 @@ return {
 
   -- tree-sitter grammar for Laravel blade files
   -- https://github.com/EmranMR/tree-sitter-blade
-  {
-    'EmranMR/tree-sitter-blade',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    ft = { 'blade' },
-  },
+  -- {
+  --   'EmranMR/tree-sitter-blade',
+  --   dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  --   ft = { 'blade' },
+  -- },
 }

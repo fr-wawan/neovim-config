@@ -1,5 +1,4 @@
 vim.opt.relativenumber = true
-vim.opt.guicursor = ''
 
 vim.opt.mouse = 'a'
 
@@ -17,8 +16,9 @@ vim.opt.breakindent = true
 
 vim.opt.undofile = true
 
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+-- vim.opt.ignorecase = true
+-- vim.opt.smartcase = true
+-- vim.opt.infercase = true
 
 vim.opt.signcolumn = 'yes'
 

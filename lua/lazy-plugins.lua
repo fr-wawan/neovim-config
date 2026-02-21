@@ -7,7 +7,7 @@ require('lazy').setup({
 
   require 'exwadia.plugins.lspconfig',
 
-  require 'exwadia.plugins.lspsaga',
+  -- require 'exwadia.plugins.lspsaga',
 
   require 'exwadia.plugins.vim-surround',
 
@@ -19,7 +19,7 @@ require('lazy').setup({
 
   require 'exwadia.plugins.highlight-color',
 
-  -- require 'exwadia.plugins.vim-abolish',
+  require 'exwadia.plugins.vim-abolish',
 
   require 'exwadia.plugins.autotag',
 
@@ -29,17 +29,19 @@ require('lazy').setup({
 
   require 'exwadia.plugins.copilot',
 
-  require 'exwadia.plugins.copilot-chat',
+  require 'exwadia.plugins.opencode',
 
   require 'exwadia.plugins.vim-visual-multi',
 
-  require 'exwadia.plugins.toggleterm',
+  -- require 'exwadia.plugins.toggleterm',
 
   require 'exwadia.plugins.commentstring',
 
-  -- require 'exwadia.plugins.statusline',
+  require 'exwadia.plugins.lualine',
 
   require 'exwadia.plugins.laravel',
+
+  require 'exwadia.plugins.rustacenvim',
 
   require 'exwadia.plugins.presence',
 
@@ -55,7 +57,10 @@ require('lazy').setup({
 
   require 'exwadia.plugins.autopairs',
 
-  require 'exwadia.plugins.neo-tree',
+  -- require 'exwadia.plugins.oil',
+
+  -- require 'exwadia.plugins.neo-tree',
+  require 'exwadia.plugins.yazi',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
