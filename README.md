@@ -1,4 +1,4 @@
-# Neovim confi
+# Neovim Config
 
 lazy.nvim-based config.
 
