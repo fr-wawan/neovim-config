@@ -49,7 +49,7 @@ require('lazy').setup({
 
   require 'exwadia.plugins.todo-comments',
 
-  require 'exwadia.plugins.mini',
+  require 'exwadia.plugins.surround',
 
   require 'exwadia.plugins.treesitter',
 
