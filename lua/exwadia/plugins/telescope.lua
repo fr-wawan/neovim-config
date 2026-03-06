@@ -48,11 +48,99 @@ return {
       -- See `:help telescope` and `:help telescope.setup()`
       require('telescope').setup {
         defaults = {
+          -- Show hidden files (files starting with .)
+          hidden = true,
+          -- Ignore unimportant files and directories
           file_ignore_patterns = {
-            'node_modules',
-            'vendor',
-            '.git',
-            '.nuxt',
+            -- Version control
+            '^.git/',
+            '.git/',
+
+            -- Python
+            '__pycache__/',
+            '%.pyc$',
+            '%.pyo$',
+            '%.pyd$',
+            '.Python',
+            'pip%-log%.txt',
+            'pip%-delete%-this%-directory%.txt',
+            '.pytest_cache/',
+            '.coverage',
+            'htmlcov/',
+            'dist/',
+            'build/',
+            '%.egg%-info/',
+            '.venv/',
+            'venv/',
+            'env/',
+            'ENV/',
+
+            -- Node.js
+            'node_modules/',
+            'npm%-debug%.log',
+            'yarn%-error%.log',
+            'yarn%-debug%.log',
+            '.npm/',
+            '.yarn/',
+            'package%-lock%.json',
+            'yarn%.lock',
+            'pnpm%-lock%.yaml',
+
+            -- Ruby
+            'vendor/bundle/',
+            '.bundle/',
+            'Gemfile%.lock',
+
+            -- Go
+            'vendor/',
+
+            -- Rust
+            'target/',
+            'Cargo%.lock',
+
+            -- Java
+            '%.class$',
+            '%.jar$',
+            '%.war$',
+            'target/',
+
+            -- C/C++
+            '%.o$',
+            '%.a$',
+            '%.so$',
+            '%.exe$',
+            '%.out$',
+
+            -- Build directories
+            'build/',
+            'dist/',
+            'out/',
+            '.output/',
+            '.nuxt/',
+            '.next/',
+
+            -- IDE and editor
+            '.vscode/',
+            '.idea/',
+            '%.swp$',
+            '%.swo$',
+            '%.swn$',
+            '*~',
+            '.DS_Store',
+
+            -- Logs
+            '%.log$',
+            'logs/',
+
+            -- Cache
+            '.cache/',
+            '%.cache',
+            '.temp/',
+            'tmp/',
+
+            -- OS
+            'Thumbs%.db',
+            'desktop%.ini',
           },
         },
         -- You can put your default mappings / updates / etc. in here
@@ -84,7 +172,9 @@ return {
       vim.keymap.set('n', '<C-p>', function()
         require('telescope').extensions['recent-files'].recent_files { hidden = true }
       end, { desc = 'Find files' })
-      vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+      vim.keymap.set('n', '<leader>sf', function()
+        builtin.find_files { hidden = true }
+      end, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
@@ -113,7 +203,7 @@ return {
 
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set('n', '<leader>sn', function()
-        builtin.find_files { cwd = vim.fn.stdpath 'config' }
+        builtin.find_files { cwd = vim.fn.stdpath 'config', hidden = true }
       end, { desc = '[S]earch [N]eovim files' })
     end,
   },

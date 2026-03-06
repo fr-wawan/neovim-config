@@ -34,3 +34,16 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 vim.api.nvim_create_user_command('W', 'w', {})
+
+-- Fungsi untuk edit file dan auto mkdir
+local function edit_create_dir(file)
+  local dir = vim.fn.fnamemodify(file, ':h') -- ambil path direktori
+  if vim.fn.isdirectory(dir) == 0 then
+    vim.fn.mkdir(dir, 'p') -- buat semua parent folder
+  end
+  vim.cmd('edit ' .. file) -- buka file
+end
+
+vim.api.nvim_create_user_command('E', function(opts)
+  edit_create_dir(opts.args ~= '' and opts.args or vim.fn.input('Edit: ', '', 'file'))
+end, { nargs = '?', complete = 'file' })

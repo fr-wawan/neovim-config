@@ -25,9 +25,11 @@ require('lazy').setup({
 
   require 'exwadia.plugins.namespace',
 
+  require 'exwadia.plugins.presence',
+
   require 'exwadia.plugins.harpoon',
 
-  require 'exwadia.plugins.copilot',
+  -- require 'exwadia.plugins.copilot',
 
   require 'exwadia.plugins.undotree',
 
