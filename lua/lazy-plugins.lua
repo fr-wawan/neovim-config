@@ -21,15 +21,17 @@ require('lazy').setup({
 
   require 'exwadia.plugins.vim-abolish',
 
-  require 'exwadia.plugins.autotag',
+  -- require 'exwadia.plugins.autotag',
 
   require 'exwadia.plugins.namespace',
 
   require 'exwadia.plugins.presence',
 
+  require 'exwadia.plugins.flutter',
+
   require 'exwadia.plugins.harpoon',
 
-  -- require 'exwadia.plugins.copilot',
+  require 'exwadia.plugins.copilot',
 
   require 'exwadia.plugins.undotree',
 
@@ -45,7 +47,7 @@ require('lazy').setup({
 
   require 'exwadia.plugins.rustacenvim',
 
-  -- require 'exwadia.plugins.presence',
+  require 'exwadia.plugins.presence',
 
   require 'exwadia.plugins.colorscheme',
 

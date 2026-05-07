@@ -38,6 +38,7 @@ return {
         typescript = { 'prettierd' },
         javascript = { 'prettierd' },
         vue = { 'prettierd' },
+        ruby = { 'rubocop' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
