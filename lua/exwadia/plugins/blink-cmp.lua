@@ -44,6 +44,15 @@ return {
     opts = {
       keymap = {
         preset = 'default',
+        ['<CR>'] = {
+          function(cmp)
+            if cmp.is_visible() then
+              return cmp.accept()
+            end
+            return false
+          end,
+          'fallback',
+        },
         ['<C-k>'] = { 'select_prev', 'fallback' },
         ['<C-j>'] = { 'select_next', 'fallback' },
         ['<Tab>'] = { 'select_and_accept', 'fallback' },
@@ -89,6 +98,7 @@ return {
       sources = {
         default = { 'lsp', 'path', 'snippets', 'lazydev' },
         providers = {
+          snippets = { score_offset = 10 }, -- tambah ini
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
         },
       },

@@ -25,7 +25,6 @@ return {
           auto_open_browser = false,
         },
         lsp = {
-          color = { enabled = true }, -- highlight warna dart variables
           settings = {
             showTodos = true,
             completeFunctionCalls = true,

@@ -157,6 +157,13 @@ return {
             },
           },
         },
+        ruby_lsp = {
+          cmd_env = {
+            RBENV_VERSION = '4.0.2',
+            BUNDLE_GEMFILE = vim.fn.expand '~/.ruby-lsp-global/Gemfile',
+            BUNDLER_VERSION = '',
+          },
+        },
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
@@ -164,6 +171,7 @@ return {
         'stylua',
         'prettierd',
         'markdownlint',
+        'ruby-lsp',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

@@ -47,3 +47,5 @@ end
 vim.api.nvim_create_user_command('E', function(opts)
   edit_create_dir(opts.args ~= '' and opts.args or vim.fn.input('Edit: ', '', 'file'))
 end, { nargs = '?', complete = 'file' })
+
+vim.cmd 'cabbrev waa noautocmd wa'

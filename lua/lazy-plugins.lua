@@ -31,6 +31,8 @@ require('lazy').setup({
 
   require 'exwadia.plugins.harpoon',
 
+  require 'exwadia.plugins.dressing',
+
   require 'exwadia.plugins.copilot',
 
   require 'exwadia.plugins.undotree',
@@ -44,6 +46,10 @@ require('lazy').setup({
   require 'exwadia.plugins.lualine',
 
   require 'exwadia.plugins.laravel',
+
+  require 'exwadia.plugins.rails',
+
+  require 'exwadia.plugins.lazygit',
 
   require 'exwadia.plugins.rustacenvim',
 

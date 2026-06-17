@@ -72,7 +72,7 @@ map('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
 map('n', 'gl', vim.diagnostic.open_float, { desc = 'Line diagnostics' })
 
 -- LSP utility
-map('n', '<M-r>', '<cmd>LspRestart<CR>', { desc = 'Restart LSP' })
+map('n', '<M-r>', '<cmd>lsp restart<CR>', { desc = 'Restart LSP' })
 
 -- Terminal (built-in)
 map({ 'n', 't' }, '<C-\\>', function()
@@ -106,6 +106,23 @@ map('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>', { desc = 'Tmux 
 
 -- Home
 map('n', '<leader>oh', '<cmd>lua require("mini.starter").open()<CR>', { desc = 'Open home' })
+
+vim.keymap.set('n', '<leader>ra', function()
+  local ok, err = pcall(vim.cmd, 'A')
+  if not ok then
+    local path = err:match 'E345: Can\'t find file "([^"]+)"'
+    if not path then
+      vim.notify(err, vim.log.levels.ERROR)
+      return
+    end
+    vim.ui.select({ 'Yes, create file', 'No, cancel' }, { prompt = 'Create ' .. vim.fn.fnamemodify(path, ':.') .. '?' }, function(choice)
+      if choice and choice:sub(1, 3) == 'Yes' then
+        vim.fn.mkdir(vim.fn.fnamemodify(path, ':h'), 'p')
+        vim.cmd('edit ' .. vim.fn.fnameescape(path))
+      end
+    end)
+  end
+end, { desc = '[R]ails [A]lternate file' })
 
 -- Copilot
 vim.g.copilot_no_tab_map = true
