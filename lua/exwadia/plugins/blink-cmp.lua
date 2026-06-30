@@ -44,15 +44,6 @@ return {
     opts = {
       keymap = {
         preset = 'default',
-        ['<CR>'] = {
-          function(cmp)
-            if cmp.is_visible() then
-              return cmp.accept()
-            end
-            return false
-          end,
-          'fallback',
-        },
         ['<C-k>'] = { 'select_prev', 'fallback' },
         ['<C-j>'] = { 'select_next', 'fallback' },
         ['<Tab>'] = { 'select_and_accept', 'fallback' },

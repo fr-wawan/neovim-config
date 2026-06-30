@@ -124,6 +124,15 @@ vim.keymap.set('n', '<leader>ra', function()
   end
 end, { desc = '[R]ails [A]lternate file' })
 
+vim.keymap.set('n', '<leader>yf', function()
+  vim.fn.setreg('+', vim.fn.expand '%:~:.')
+end, { desc = 'Yank file path (relative)' })
+
+-- copy filename only
+vim.keymap.set('n', '<leader>yn', function()
+  vim.fn.setreg('+', vim.fn.expand '%:t')
+end, { desc = 'Yank file name' })
+
 -- Copilot
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap('i', '<M-CR>', 'copilot#Accept("<CR>")', { expr = true, noremap = true, silent = true })

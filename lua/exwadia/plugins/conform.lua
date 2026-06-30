@@ -39,6 +39,7 @@ return {
         javascript = { 'prettierd' },
         vue = { 'prettierd' },
         ruby = { 'rubocop' },
+        eruby = { 'erb_format' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
